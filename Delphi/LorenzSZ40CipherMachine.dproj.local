@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/10/11 19:52:53.000.939,=C:\Users\tom189\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/10/11 20:16:59.000.656,C:\Users\tom189\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Projects\programs\Delphi\LorenzSZ40\LorenzSZ40.pas</Transaction>
+    <Transaction>2018/10/11 20:16:59.000.656,C:\Users\tom189\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Projects\programs\Delphi\LorenzSZ40\LorenzSZ40.dfm</Transaction>
+    <Transaction>2018/10/11 20:50:13.000.463,=C:\Users\tom189\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/10/11 21:02:21.000.633,C:\Users\tom189\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Projects\programs\Delphi\LorenzSZ40\Baudot.pas</Transaction>
+    <Transaction>2018/10/11 23:00:06.000.513,C:\Users\tom189\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Projects\programs\Delphi\LorenzSZ40\LorenzSZ40CipherMachine.dproj</Transaction>
+    <Transaction>2018/10/13 01:40:28.000.014,=C:\Users\Tom Taylor\Documents\LorenzSZ40Delphi\Unit1.pas</Transaction>
+    <Transaction>2018/10/13 01:40:40.000.439,C:\Users\Tom Taylor\Documents\LorenzSZ40Delphi\LorenzWheel.pas=C:\Users\Tom Taylor\Documents\LorenzSZ40Delphi\Unit1.pas</Transaction>
+    <Transaction>2018/10/13 02:06:01.000.105,=D:\Projects\programs\Delphi\LorenzSZ40\Unit1.pas</Transaction>
+    <Transaction>2018/10/13 02:06:18.000.520,D:\Projects\programs\Delphi\LorenzSZ40\Unit1.pas=D:\Projects\programs\Delphi\LorenzSZ40\LorenzMachine.pas</Transaction>
+    <Transaction>2018/10/13 02:21:33.000.771,=C:\Users\Tom Taylor\Documents\LorenzSZ40Delphi\Unit1.pas</Transaction>
+    <Transaction>2018/10/13 02:24:18.000.733,C:\Users\Tom Taylor\Documents\LorenzSZ40Delphi\LorenzWheelCollection.pas=C:\Users\Tom Taylor\Documents\LorenzSZ40Delphi\Unit1.pas</Transaction>
+    <Transaction>2018/10/14 22:38:33.000.506,=D:\Projects\programs\Delphi\LorenzSZ40\Unit1.pas</Transaction>
+    <Transaction>2018/10/14 22:38:56.000.573,D:\Projects\programs\Delphi\LorenzSZ40\LorenzBaudotASCIITools.pas=D:\Projects\programs\Delphi\LorenzSZ40\Unit1.pas</Transaction>
+    <Transaction>2018/10/15 23:17:06.000.074,D:\Projects\programs\Delphi\LorenzSZ40\LorenzTools.pas=D:\Projects\programs\Delphi\LorenzSZ40\LorenzBaudotASCIITools.pas</Transaction>
+  </Transactions>
+	<BT_BuildType>Debug</BT_BuildType>
+</BorlandProject>
