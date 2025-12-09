@@ -39,7 +39,7 @@ begin
 
   SetLength(FWheels, Length(WHEEL_NAMES));
   for Index := 0 to pred(Length(WHEEL_NAMES)) do
-    Wheels[Index] := TLorenzWheel.Create(WHEEL_NAMES[Index], Index, FPinData);
+    Wheels[Index] := TLorenzWheel.Create(WHEEL_NAMES[Index], Index + 1, FPinData);
     
   Reset;
 end;
@@ -77,6 +77,7 @@ function TLorenzWheelCollection.Wheel(AWheelName : String) : TLorenzWheel;
 var
   Index : Integer;
 begin
+  Result := nil;
   for Index := 0 to pred(Length(Wheels)) do
     if (Wheels[Index].WheelName = AWheelName) then
     begin
@@ -85,10 +86,12 @@ begin
     end;
 end;
 
+{------------------------------------------------------------------------------}
 function TLorenzWheelCollection.Wheel(AWheelNumber : Integer) : TLorenzWheel;
 var
   Index : Integer;
 begin
+  Result := nil;
   for Index := 0 to pred(Length(Wheels)) do
     if (Wheels[Index].WheelNumber = AWheelNumber) then
     begin

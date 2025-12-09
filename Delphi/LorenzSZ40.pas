@@ -68,6 +68,8 @@ type
     procedure ApplyPindataButtonClick(Sender: TObject);
     procedure ApplyRandomPindataButtonClick(Sender: TObject);
     procedure ContentMemoChange(Sender: TObject);
+    procedure ExportPindataButtonClick(Sender: TObject);
+    procedure ImportPindataButtonClick(Sender: TObject);
   private
     { Private declarations }
     FSimulationThread : TSimulationThread;
@@ -85,6 +87,9 @@ type
   public
     { Public declarations }
   end;
+
+const
+  ConfigurationXMLPath = 'config.xml';
 
 var
   LorenzSZ40Form: TLorenzSZ40Form;
@@ -165,7 +170,15 @@ begin
   FBlankCol1 := 6;
   FBlankCol2 := 9;
   ContentMemo.Text := 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies convallis pretium. Sed in tortor urna. Vestibulum vitae porta mauris, non ornare metus.' + ' Nullam ultrices dui leo, in consequat velit porta quis. Maecenas in tristique eros, quis efficitur lacus. Fusce imperdiet neque vel lectus cursus, quis maximus ' + ' libero egestas. Donec eu condimentum nulla. Sed nec volutpat lorem. Aliquam ac feugiat enim. Pellentesque consectetur pellentesque ligula ut gravida. Curabitur lobortis aliquet neque, sed viverra dui tempor in.' + ' Vivamus posuere viverra sollicitudin. Morbi lacus velit, luctus sit amet feugiat hendrerit, sagittis at nunc. Nunc rutrum cursus arcu, eget semper lacus iaculis at. Phasellus interdum nulla eget rhoncus laoreet.';
-  FLorenzMachine := TLorenzMachine.Create;
+
+  if not FileExists(ConfigurationXMLPath) then
+  begin
+    ShowMessage('Failed to find configuration XML.');
+    Application.Terminate;
+    Exit;
+  end;
+
+  FLorenzMachine := TLorenzMachine.Create(ConfigurationXMLPath);
 
   PindataMemo.Clear;
   PinDataTemp := FLorenzMachine.WheelCollection.Pindata;
@@ -353,6 +366,18 @@ begin
       FLorenzMachine.Reset;
     end;
   end;
+end;
+
+{------------------------------------------------------------------------------}
+procedure TLorenzSZ40Form.ImportPindataButtonClick(Sender: TObject);
+begin
+  //
+end;
+
+{------------------------------------------------------------------------------}
+procedure TLorenzSZ40Form.ExportPindataButtonClick(Sender: TObject);
+begin
+  //
 end;
 
 { ApplyPinDataButtonClick }

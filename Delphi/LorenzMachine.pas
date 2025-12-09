@@ -17,7 +17,7 @@ type
     FConvertionTools : TLorenzTools;
   public
     { Public declarations }
-    constructor Create;
+    constructor Create(const ConfigurationXMLPath: string);
     destructor Destroy; override;
     function EncryptDecrypt(EMessage : string) : string;
     property WheelCollection : TLorenzWheelCollection read FWheelCollection;
@@ -28,7 +28,7 @@ implementation
 
 { Constructor }
 {------------------------------------------------------------------------------}
-constructor TLorenzMachine.Create;
+constructor TLorenzMachine.Create(const ConfigurationXMLPath: string);
 var
   Doc: IXMLDocument;
   Data, XMLNode, ASCIINode, BaudotNode: IXMLNode;
@@ -36,9 +36,8 @@ var
   PinData, BaudotData : TArray<Integer>;
   CharactersData : TArray<TLorenzCharacter>;
 begin
-  Doc := LoadXMLDocument('LorenzMachineConfig.xml');
+  Doc := LoadXMLDocument(ConfigurationXMLPath);
   Data := Doc.DocumentElement;
-
   for Index := 0 to pred(Data.ChildNodes.Count) do
   begin
     XMLNode := Data.ChildNodes[Index];

@@ -1441,11 +1441,9 @@ object LorenzSZ40Form: TLorenzSZ40Form
     04C0FA443DA75DA34CDEEA3BE675FEB62B1C6AFDBD812E634300DC3A204DFCE6
     741C40F5F7467FDBC03AC38600B8F561573038810D46BFCDF0FF03E027201835
     FB47B50000000049454E44AE426082}
-  OldCreateOrder = False
   OnCreate = FormActivate
   OnDestroy = FormDestroy
   OnResize = FormResize
-  PixelsPerInch = 96
   TextHeight = 13
   object MainPanel: TPanel
     Left = 0
@@ -1561,7 +1559,9 @@ object LorenzSZ40Form: TLorenzSZ40Form
           Height = 25
           Align = alBottom
           Caption = 'Import pindata from config'
+          Enabled = False
           TabOrder = 2
+          OnClick = ImportPindataButtonClick
         end
         object ExportPindataButton: TButton
           Left = 2
@@ -1570,7 +1570,9 @@ object LorenzSZ40Form: TLorenzSZ40Form
           Height = 25
           Align = alBottom
           Caption = 'Export pindata to config'
+          Enabled = False
           TabOrder = 3
+          OnClick = ExportPindataButtonClick
         end
         object Panel1: TPanel
           Left = 2

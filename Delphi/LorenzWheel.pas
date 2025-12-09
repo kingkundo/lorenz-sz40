@@ -70,12 +70,12 @@ end;
 {------------------------------------------------------------------------------}
 function TLorenzWheel.GetWheelValue(aLinePosition : TLorenzWheelLinePosition): Integer;
 begin
+  Result := -1;
   case (aLinePosition) of
     PREVIOUS: Result := GetPreviousWheelValue;
     CURRENT: Result := GetCurrentWheelValue;
     NEXT: Result := GetNextWheelValue;
   end;
-
 end;
 
 { GetPreviousWheelValue }
