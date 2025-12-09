@@ -12,11 +12,9 @@ uses
 type
   TLorenzMachine = class
   private
-    { Private declarations }
     FWheelCollection : TLorenzWheelCollection;
     FConvertionTools : TLorenzTools;
   public
-    { Public declarations }
     constructor Create(const ConfigurationXMLPath: string);
     destructor Destroy; override;
     function EncryptDecrypt(EMessage : string) : string;
@@ -50,7 +48,6 @@ begin
         end;
         FWheelCollection := TLorenzWheelCollection.Create(PinData);
       end
-
     else if (XMLNode.NodeName = 'characters') then
     begin
       SetLength(CharactersData, XMLNode.ChildNodes.Count);
@@ -145,7 +142,6 @@ begin
   end;
 
   Result := ArrayToString(EncryptedMessage);
-
 end;
 
 { Reset }

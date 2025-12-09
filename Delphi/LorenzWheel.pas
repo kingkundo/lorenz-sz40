@@ -7,12 +7,10 @@ type
 
   TLorenzWheel = class
   private
-    { Private declarations }
     FWheelName : String;
     FMaxSize, FWheelNumber, FInitialPosition, FCurrentPosition : Integer;
     FPinData: TArray<Integer>;
-    const LORENZ_WHEEL_SIZES: array of Integer = [43, 47, 51, 53, 59, 37, 61, 41, 31, 29, 26, 23];
-    const LORENZ_WHEEL_START_POSITIONS: array of Integer = [0, 43, 90, 141, 194, 253, 290, 351, 392, 423, 452, 478];
+
     const DEFAULT_INITIAL_POSITION: Integer = 1;
     function GetPreviousWheelValue : Integer;
     function GetCurrentWheelValue : Integer;
@@ -20,8 +18,13 @@ type
     procedure SetPinData(APinData : TArray<Integer>);
 
   public
-    { Public declarations }
     constructor Create(AWheelName : String; AWheelNumber : Integer; APinData : TArray<Integer>);
+
+    procedure Rotate;
+    procedure Reset;
+
+    function GetWheelValue(aLinePosition : TLorenzWheelLinePosition): Integer;
+
     property InitialPosition : Integer read FInitialPosition write FInitialPosition;
     property WheelName : String read FWheelName write FWheelName;
     property WheelNumber : Integer read FWheelNumber write FWheelNumber;
@@ -30,12 +33,13 @@ type
     property CurrentWheelValue : Integer read GetCurrentWheelValue;
     property NextWheelValue : Integer read GetNextWheelValue;
     property PinData : TArray<Integer> read FPinData write SetPinData;
-    procedure Rotate;
-    procedure Reset;
-    function GetWheelValue(aLinePosition : TLorenzWheelLinePosition): Integer;
   end;
 
 implementation
+
+const
+  LORENZ_WHEEL_SIZES: array of Integer = [43, 47, 51, 53, 59, 37, 61, 41, 31, 29, 26, 23];
+  LORENZ_WHEEL_START_POSITIONS: array of Integer = [0, 43, 90, 141, 194, 253, 290, 351, 392, 423, 452, 478];
 
 { Constructor }
 {------------------------------------------------------------------------------}

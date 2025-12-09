@@ -121,66 +121,6 @@ begin
   Result := LineArray;
 end;
 
-
-{ Update }
-{ An update method that explicitly says which wheels will be turned by wheell name.
-  It works but isn't as performant as the int compare version obviously. }
-{------------------------------------------------------------------------------
-procedure TLorenzWheelCollection.Update(ARotate : Boolean);
-begin
-  if (ARotate) then
-  begin
-    Wheel('X1').Rotate;
-    Wheel('X2').Rotate;
-    Wheel('X3').Rotate;
-    Wheel('X4').Rotate;
-    Wheel('X5').Rotate;
-
-    if (Wheel('M61').PreviousWheelValue = 1) then
-      Wheel('M37').Rotate;
-
-    Wheel('M61').Rotate;
-
-    if (Wheel('M37').PreviousWheelValue = 1) then
-    begin
-      Wheel('Ψ1').Rotate;
-      Wheel('Ψ2').Rotate;
-      Wheel('Ψ3').Rotate;
-      Wheel('Ψ4').Rotate;
-      Wheel('Ψ5').Rotate;
-    end;
-  end;
-end;
-
-{ Update }
-{ A faster update method that compares ints rather than strings.}
-{------------------------------------------------------------------------------
-procedure TLorenzWheelCollection.Update(ARotate : Boolean);
-begin
-  if (ARotate) then
-  begin
-    Wheel(1).Rotate;
-    Wheel(2).Rotate;
-    Wheel(3).Rotate;
-    Wheel(4).Rotate;
-    Wheel(5).Rotate;
-
-    if (Wheel(7).PreviousWheelValue = 1) then
-      Wheel(6).Rotate;
-
-    Wheel(7).Rotate;
-
-    if (Wheel(6).PreviousWheelValue = 1) then
-    begin
-      Wheel(8).Rotate;
-      Wheel(9).Rotate;
-      Wheel(10).Rotate;
-      Wheel(11).Rotate;
-      Wheel(12).Rotate;
-    end;
-  end;
-end;
-
 { Update }
 { The fastest update method. Accesses wheel arrays directly. }
 {------------------------------------------------------------------------------}
@@ -218,7 +158,6 @@ var
 begin
   for Index := 0 to pred(Length(Wheels)) do
     Wheels[Index].Reset;
-
 end;
 
 
